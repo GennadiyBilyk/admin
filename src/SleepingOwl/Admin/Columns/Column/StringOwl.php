@@ -1,6 +1,6 @@
 <?php namespace SleepingOwl\Admin\Columns\Column;
 
-class String extends BaseColumn
+class StringOwl extends BaseColumn
 {
 	/**
 	 * @var string
