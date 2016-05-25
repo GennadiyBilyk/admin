@@ -16,6 +16,7 @@ use SleepingOwl\Admin\Base\AliasBinder;
  * @method static \SleepingOwl\Admin\Columns\Column\StringOwl string($name)
  * @method static \SleepingOwl\Admin\Columns\Column\TreeControl treeControl()
  * @method static \SleepingOwl\Admin\Columns\Column\Url url($name)
+ * @method static \SleepingOwl\Admin\Columns\Column\UrlTo urlto($name)
  */
 class Column extends AliasBinder
 {

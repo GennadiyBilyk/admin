@@ -21,6 +21,7 @@ class ColumnServiceProvider extends ServiceProvider
 		Column::register('string', 'SleepingOwl\Admin\Columns\Column\StringOwl');
 		Column::register('treeControl', 'SleepingOwl\Admin\Columns\Column\TreeControl');
 		Column::register('url', 'SleepingOwl\Admin\Columns\Column\Url');
+		Column::register('urlto', 'SleepingOwl\Admin\Columns\Column\UrlTo');
 	}
 
 }
