@@ -23,7 +23,9 @@ class UrlTo extends NamedColumn
     {
         $instance = $this->getValue($this->instance, $this->name());
 
-        return '<a href="' . $instance['href'] . '">' . $instance['text'] . '</a>';
+        $params = isset($instance['params']) ? $instance['params'] : [];
+
+        return  view(AdminTemplate::view('column.urlto'), ['instance'=>$instance,'params'=>$params]);
     }
 
 }
