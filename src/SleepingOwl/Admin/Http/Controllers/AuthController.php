@@ -8,6 +8,8 @@ use Request;
 use Redirect;
 use SleepingOwl\AdminAuth\Facades\AdminAuth;
 use Validator;
+use Sentinel;
+
 
 class AuthController extends Controller
 {
@@ -59,8 +61,8 @@ class AuthController extends Controller
 
 	public function getLogout()
 	{
-		AdminAuth::logout();
-		return $this->redirect();
+        Sentinel::logout();
+        return Redirect::intended('/');
 	}
 
 }
