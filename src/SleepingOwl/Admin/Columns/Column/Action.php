@@ -37,14 +37,49 @@ class Action extends NamedColumn
 	 */
 	protected $url;
 
-	/**
-	 * @param string $name
-	 */
-	function __construct($name)
-	{
-		parent::__construct($name);
-		$this->orderable(false);
-	}
+    protected $id;
+    protected $confirm;
+    protected $class;
+
+    /**
+     * @param string $name
+     */
+    function __construct($name)
+    {
+        parent::__construct($name);
+        $this->orderable(false);
+    }
+
+    public function id($id = null)
+    {
+        if (is_null($id))
+        {
+            return $this->id;
+        }
+        $this->id = $id;
+        return $this;
+    }
+    public function confirm($confirm = null)
+    {
+        if (is_null($confirm))
+        {
+            return $this->confirm;
+        }
+        $this->confirm = $confirm;
+        return $this;
+    }
+
+    public function classCss($class = null)
+    {
+        if (is_null($class))
+        {
+            return $this->class;
+        }
+        $this->class = $class;
+        return $this;
+    }
+
+
 
 	/**
 	 * Get or set icon class
@@ -133,6 +168,9 @@ class Action extends NamedColumn
 			'value'  => $this->value(),
 			'target' => $this->target(),
 			'url'    => $this->url(),
+            'id'    => $this->id(),
+            'confirm'    => $this->confirm(),
+            'class'    => $this->classCss(),
 		];
 		return view(AdminTemplate::view('column.action'), $params);
 	}
